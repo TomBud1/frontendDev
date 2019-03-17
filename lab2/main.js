@@ -74,8 +74,6 @@ function findBySizeLess(limes) {
     return tvArray;
 };
 
-function 
-
 console.log(tv1.marka, tv1.model, tv1.rozmiar)
 console.log('-------------------------------------------')
 console.log(tvDb)
