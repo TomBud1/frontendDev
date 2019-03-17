@@ -1,98 +1,93 @@
-var telewizor1 = {
-    marka: 'Samsung',
+var tv1 = {
+    company: 'Samsung',
     model: 'NU7102K',
-    rozmiar: 55,
-    zlacza: {
+    size: 55,
+    connectors: {
         HDMI: 3,
         USB: 3,
         Ethernet: true
     }
 };
 
-var telewizor2 = {
-    marka: 'LG',
+var tv2 = {
+    company: 'LG',
     model: '65UK6400',
-    rozmiar: 65,
-    zlacza: {
+    size: 65,
+    connectors: {
         HDMI: 3,
         USB: 2,
         Ethernet: true
     }
 };
 
-var telewizor3 = {
-    marka: 'Sharp',
+var tv3 = {
+    company: 'Sharp',
     model: '40UI7552E',
-    rozmiar: '40',
-    zlacza: {
+    size: 40,
+    connectors: {
         HDMI: 3,
         USB: 3,
         Ethernet: true
     }
 }
 
-var telewizor4 = {
-    marka: 'Sharp',
+var tv4 = {
+    company: 'Sharp',
     model: '55UIE',
-    rozmiar: '55',
-    zlacza: {
+    size: 55,
+    connectors: {
         HDMI: 2,
         USB: 2,
         Ethernet: true
     }
 }
 
-var telewizory = [telewizor1, telewizor2, telewizor3, telewizor4];
-var limes = 55;
+var tvDb = [tv1, tv2, tv3, tv4];
 
-function findByName(telewizory,term) {
-    var telewizoryArray = [];
-    for (i = 0; i < telewizory.length; i++) {
-        if ((telewizory[i].marka) == term) {
-            telewizoryArray.push(telewizory[i])
+function findByName(term) {
+    var tvArray = [];
+    for (i = 0; i < tvDb.length; i++) {
+        if ((tvDb[i].company) == term) {
+            tvArray.push(tvDb[i])
         }
     }
-    return telewizoryArray;
+    return tvArray;
 };
 
-function findBySizeGreater(telewizory,limes) {
-    var telewizoryArray = [];
-    for (i = 0; i < telewizory.length; i++) {
-        if ((telewizory[i].rozmiar) >= limes) {
-            telewizoryArray.push(telewizory[i])
+function findBySizeGreater(limes) {
+    var tvArray = [];
+    for (i = 0; i < tvDb.length; i++) {
+        if ((tvDb[i].size) >= limes) {
+            tvArray.push(tvDb[i])
         }
     }
-    return telewizoryArray;
+    return tvArray;
 };
 
-function findBySizeLess(telewizory,limes) {
-    var telewizoryArray = [];
-    for (i = 0; i < telewizory.length; i++) {
-        if ((telewizory[i].rozmiar) <= limes) {
-            telewizoryArray.push(telewizory[i])
+function findBySizeLess(limes) {
+    var tvArray = [];
+    for (i = 0; i < tvDb.length; i++) {
+        if ((tvDb[i].size) <= limes) {
+            tvArray.push(tvDb[i])
         }
     }
-    return telewizoryArray;
+    return tvArray;
 };
 
-console.log(telewizor1.marka, telewizor1.model, telewizor1.rozmiar)
+function 
 
-console.log(telewizory)
-
-console.log(findByName(telewizory, 'Sharp'))
-
-console.log(findBySizeGreater(telewizory, 55))
-
-console.log(findBySizeLess(telewizory, 65))
-
-
-function less(value) {
-    return value <= limes;
-}
-
-function greater(value) {
-    return value >= limes;
-}
+console.log(tv1.marka, tv1.model, tv1.rozmiar)
+console.log('-------------------------------------------')
+console.log(tvDb)
+console.log('-------------------------------------------')
+console.log('findByName')
+console.log(findByName('Sharp'))
+console.log('-------------------------------------------')
+console.log('findBySizeGreater(55)')
+console.log(findBySizeGreater(55))
+console.log('-------------------------------------------')
+console.log('findBySizeLess(55)')
+console.log(findBySizeLess(65))
 
 
 
