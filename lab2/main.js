@@ -46,31 +46,31 @@ var tvDb = [tv1, tv2, tv3, tv4];
 
 function findByName(term) {
     var tvArray = [];
-    for (i = 0; i < tvDb.length; i++) {
-        if ((tvDb[i].company) == term) {
-            tvArray.push(tvDb[i])
+    tvDb.forEach (function(tvDb) {
+        if ((tvDb.company) == term) {
+            tvArray.push(tvDb)
         }
-    }
+    });
     return tvArray;
 };
 
 function findBySizeGreater(limes) {
     var tvArray = [];
-    for (i = 0; i < tvDb.length; i++) {
-        if ((tvDb[i].size) >= limes) {
-            tvArray.push(tvDb[i])
+    tvDb.forEach (function(tvDb) {
+        if ((tvDb.size) >= limes) {
+            tvArray.push(tvDb)
         }
-    }
+    });
     return tvArray;
 };
 
 function findBySizeLess(limes) {
     var tvArray = [];
-    for (i = 0; i < tvDb.length; i++) {
-        if ((tvDb[i].size) <= limes) {
-            tvArray.push(tvDb[i])
+    tvDb.forEach (function(tvDb) {
+        if ((tvDb.size) <= limes) {
+            tvArray.push(tvDb)
         }
-    }
+    });
     return tvArray;
 };
 
@@ -84,7 +84,7 @@ console.log('-------------------------------------------')
 console.log('findBySizeGreater(55)')
 console.log(findBySizeGreater(55))
 console.log('-------------------------------------------')
-console.log('findBySizeLess(55)')
+console.log('findBySizeLess(65)')
 console.log(findBySizeLess(65))
 
 
