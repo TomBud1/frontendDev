@@ -6,10 +6,10 @@ class Device {
     }
 
     set company(value){
-        this.company=value;
+        this._company=value;
     }
     set model(value){
-        this.model=value;
+        this._model=value;
     }
     get model(){
         return this._model;
@@ -27,6 +27,37 @@ class Tv extends Device {
     this.HDMI = HDMI;
     this.USB = USB;
 }
+
+set size(value){
+    this._size=value;
+}
+set smartTV(value){
+    this._smartTV=value;
+}
+
+set HDMI(value){
+    this._HDMI=value;
+}
+
+set USB(value){
+    this._USB=value;
+}
+
+get size(){
+    return this._size;
+}
+get smartTV(){
+    return this._smartTV;
+}
+
+get HDMI(){
+        return this._HDMI;
+}
+
+get USB(){
+        return this._USB;
+}
+
     toString() {
         return this.company + " " + this.model + " smartTV:" + this.smartTV + " size: " + this.size + " HDMI:" + this.HDMI + " USB:" + this.USB + "\n";
 }
@@ -46,19 +77,19 @@ tvDb.module = (function () {
     }
 
     function findTvBySizeGreater(size) {
-        return tvs.filter(function (tv) { return tv.size >= size; });
+        return tvs.filter(tv => tv.size >= size);
     }
 
     function findTvBySizeLess(size) {
-        return tvs.filter(function (tv) { return tv.size <= size; });
+        return tvs.filter(tv => tv.size <= size);
     }
 
 return {
 
     showAllModelsInDb: function () {
-        tvs.forEach(function (tv) {
-            console.log(tv.toString());
-        });
+        tvs.forEach(tv =>
+            console.log(tv.toString())
+        );
     },
 
     showByModel: function (model) {
@@ -66,21 +97,18 @@ return {
     },
 
     showByCompany: function (company) {
-        return console.log(findTvByCompany(company).map(function (tv) {
-            return tv.toString();
-        }).join(""));
+        return console.log(findTvByCompany(company).map(tv => 
+        tv.toString()).join(""));
     },
 
     showTvBySizeGreater: function (size) {
-        return console.log(findTvBySizeGreater(size).map(function (tv) {
-            return tv.toString();
-        }).join(""));
+        return console.log(findTvBySizeGreater(size).map(tv => 
+            tv.toString()).join(""));
     },
 
     showTvBySizeLess: function (size) {
-        return console.log(findTvBySizeLess(size).map(function (tv) {
-            return tv.toString();
-        }).join(""));
+        return console.log(findTvBySizeLess(size).map(tv => 
+            tv.toString()).join(""));
     },
 
     addTv: function (tv) {
