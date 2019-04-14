@@ -22,10 +22,10 @@ class Device {
 class Tv extends Device {
     constructor(company, model,smartTV, size, HDMI, USB) {
     super(company,model);    
-    this.size = size;
-    this.smartTV = smartTV;
-    this.HDMI = HDMI;
-    this.USB = USB;
+    this._size = size;
+    this._smartTV = smartTV;
+    this._HDMI = HDMI;
+    this._USB = USB;
 }
 
 set size(value){
@@ -59,7 +59,7 @@ get USB(){
 }
 
     toString() {
-        return this.company + " " + this.model + " smartTV:" + this.smartTV + " size: " + this.size + " HDMI:" + this.HDMI + " USB:" + this.USB + "\n";
+        return this.company + " " + this.model + " smartTV:" + this._smartTV + " size: " + this._size + " HDMI:" + this._HDMI + " USB:" + this._USB + "\n";
 }
 }
 
