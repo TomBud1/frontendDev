@@ -1,8 +1,12 @@
+
+const TvDb = require ('./models/TvDb');
 const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
 const port = 8000;
+
+const tvs = new TvDb();
 
 app.use(bodyParser.json());
 const numbers = [];
@@ -20,3 +24,7 @@ app.post('/api/numbers', (req, res) => {
 });
 
 app.listen(port, () => console.log('Example app listening on port ${port}!'));
+
+app.get('/api/tvs', (req,res) => {
+    res.send(tvs.AllModelsInDb());
+});
