@@ -54,7 +54,7 @@ class Tv {
     }
 
     toString() {
-        return `${this._company} ${this._model} smartTV:${this._smartTV} size:${this._size} + HDMI:${this._HDMI} USB:" + ${this._USB}\n`;
+        return `${this._company} ${this._model} smartTV:${this._smartTV} size:${this._size} HDMI:${this._HDMI} USB:${this._USB}\n`;
     }
 }
 
