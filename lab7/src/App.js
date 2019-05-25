@@ -1,6 +1,6 @@
 import React from 'react';
+import Tvs from './components/Tvs.js';
 import './App.css';
-import Tvs from './components/Tvs.js'
 
 
 
