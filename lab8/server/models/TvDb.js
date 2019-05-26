@@ -1,4 +1,4 @@
-import Tv from './Tv.js';
+const Tv = require('./Tv.js');
 
 class TvDb {
 
@@ -47,4 +47,4 @@ class TvDb {
 
 }
 
-export default TvDb;    
+module.exports = TvDb;    

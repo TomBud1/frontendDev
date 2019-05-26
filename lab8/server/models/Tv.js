@@ -58,4 +58,4 @@ class Tv {
     }
 }
 
-export default Tv;
+module.exports = Tv
