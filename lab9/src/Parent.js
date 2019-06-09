@@ -1,24 +1,24 @@
-import React, {Componenet} from 'react';
+import React, {Component} from 'react';
 import Dollar from './Dollar.js';
 import PLN from './PLN.js';
 
-class Parent extends Component {
+export default class Parent extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
-            dollar: 1,
-            pln: 2
+            dollar: "",
+            pln: ""
         }
     }
 
     handleDollarChange = (value) => {
-        this.setState({dollar: value , pln: value })
+        this.setState({dollar: value , pln: value*2 })
     };
 
     handlePLNChange = (value) => {
-        this.setState({dollar: value , pln: value })
+        this.setState({dollar: value/2 , pln: value })
     };
 
     render () {
@@ -34,5 +34,3 @@ class Parent extends Component {
         )
     }
 }
-
-export default Parent;

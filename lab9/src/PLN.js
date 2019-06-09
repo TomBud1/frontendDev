@@ -12,12 +12,12 @@ class PLN extends Component {
 
     render() {
         const cash = this.props.plns
-        return {
+        return(
             <div>
                 <label>PLN</label>
                 <input value={cash} onChange={this.handleChange}/>
             </div>
-        }
+        );
     }
 }
 
