@@ -11,6 +11,10 @@ class TvDb {
         this.addTv(new Tv("Samsung", "NU7102K", true, 55, 3, 3));
 
         this.addTv(new Tv("Samsung", "UE60KU6072", true, 60, 2, 2));
+
+        this.addTv(new Tv("LG", "50UK6750", true, 50, 4, 2 ));
+
+        this.addTv(new Tv("Philips", "55PUS7303/12", true, 55, 4, 2 ));
     }
 
     findTvByModel(model) {
@@ -34,7 +38,8 @@ class TvDb {
     }
 
     addTv(tv) {
-        if (this._tvs.some(tvInDb => tv.model === tvInDb.model )) {
+        if (this._tvs.some(tvInDb => tvInDb._model === tv._model )) {
+            console.log(tv);
             console.log("Model is already in database!");
             return;
         }
@@ -42,7 +47,12 @@ class TvDb {
     }
 
     deleteTv(model) {
-        this._tvs = this._tvs.filter(tv => tv.model !== model );
+        this._tvs = this._tvs.filter(tv => tv._model !== _model );
+    }
+
+    updateTv(model) {
+    const tv = this._tvs.find(tv => tv._model === _model)
+    tv.updateTv(body);
     }
 
 }
