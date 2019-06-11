@@ -1,26 +1,33 @@
+class BaseModel {
+    constructor(id){
+        this.id = id;
+    }
+}
 
-class Tv {
-    constructor(company, model, smartTV, size, HDMI, USB) {
-        this._company = company;
-        this._model = model;
-        this._size = size;
-        this._smartTV = smartTV;
-        this._HDMI = HDMI;
-        this._USB = USB;
+
+class Tv extends BaseModel {
+    constructor(id, company, model, smartTV, size, HDMI, USB) {
+        super(id);
+        this.company = company;
+        this.model = model;
+        this.size = size;
+        this.smartTV = smartTV;
+        this.HDMI = HDMI;
+        this.USB = USB;
     }
 
-    // updateTv(body){
-    //     const {company, model, size, smartTV, HDMI, USB} = body;
-    //     this._company = company;
-    //     this._model = model;
-    //     this._size = size;
-    //     this._smartTV = smartTV;
-    //     this._HDMI = HDMI;
-    //     this._USB = USB;
-    // }
-   
+    updateTv(body) {
+        const { company, model, size, smartTV, HDMI, USB } = body;
+        this.company = company;
+        this.model = model;
+        this.size = size;
+        this.smartTV = smartTV;
+        this.HDMI = HDMI;
+        this.USB = USB;
+    }
+
     toString() {
-        return `${this._company} ${this._model} smartTV:${this._smartTV} size:${this._size} HDMI:${this._HDMI} USB:${this._USB}\n`;
+        return `${this.company} ${this.model} smartTV:${this.smartTV} size:${this.size} HDMI:${this.HDMI} USB:${this.USB}\n`;
     }
 }
 
