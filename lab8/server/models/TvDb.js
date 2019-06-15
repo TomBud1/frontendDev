@@ -38,11 +38,6 @@ class TvDb {
     }
 
     addTv(company, model, smartTV, size, HDMI, USB) {
-        // if (this.tvs.some(tvInDb => tvInDb._model === tv._model)) {
-        //     console.log(tv);
-        //     console.log("Model is already in database!");
-        //     return;
-        // }
         let id = this.tvs.length + 1;
         do {
             id = id++;

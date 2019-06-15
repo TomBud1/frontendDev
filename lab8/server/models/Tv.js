@@ -1,5 +1,5 @@
 class BaseModel {
-    constructor(id){
+    constructor(id) {
         this.id = id;
     }
 }
